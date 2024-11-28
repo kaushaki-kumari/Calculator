@@ -118,6 +118,9 @@ function updateDisplay() {
     display.value = expression;
     
   }
+
+   // Ensure the display scrolls to the right
+   display.scrollLeft = display.scrollWidth;
 }
 
 

@@ -35,7 +35,9 @@ body {
   text-align: right;
   background-color: #fff;
   box-sizing: border-box;
-  /* direction: rtl; */
+  overflow-x: auto;
+  white-space: nowrap;
+  direction: ltr; 
 }
 
 
