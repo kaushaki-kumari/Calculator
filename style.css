@@ -37,8 +37,8 @@ body {
   resize: none; 
   overflow: auto;
   box-sizing: border-box;
+  direction: rtl;
 }
-
 
 
 .buttons {

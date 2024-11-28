@@ -30,8 +30,6 @@ function inputCal(op) {
 
 
   if (!allowOperators || currentInput === "") return;
-
-
   operands.push(parseFloat(currentInput));
   operators.push(op);
 
