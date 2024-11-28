@@ -3,7 +3,7 @@ let display = document.getElementById("display");
 let currentInput = "";
 let operands = [];
 let operators = [];
-let allowOperators = false; 
+let allowOperators = false;
 
 function inputValue(number) {
   if (currentInput.includes(".") && number === ".") return; 
@@ -116,8 +116,11 @@ function updateDisplay() {
     }
 
     display.value = expression;
+    
   }
 }
+
+
 
 
 

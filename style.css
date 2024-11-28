@@ -20,8 +20,8 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
+  
 }
-
 
 
 .display {
@@ -34,10 +34,8 @@ body {
   border-radius: 4px;
   text-align: right;
   background-color: #fff;
-  resize: none; 
-  overflow: auto;
   box-sizing: border-box;
-  direction: rtl;
+  /* direction: rtl; */
 }
 
 
