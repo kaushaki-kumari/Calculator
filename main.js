@@ -12,7 +12,6 @@ function inputValue(number) {
 }
 
 function inputCal(op) {
-  // Handle negative numbers at start
   if (currentInput === "" && op === "-" && operands.length === 0) {
     currentInput = "-";
     allowOperators = false;
@@ -20,40 +19,34 @@ function inputCal(op) {
     return;
   }
 
-  // Handle operator replacement logic
   if (currentInput === "" && operators.length > 0) {
     let lastOp = operators[operators.length - 1];
-    
-    // Handle multiplication/division with minus--
+
+    // Handling * - and / - properly
     if ((lastOp === "*" || lastOp === "/") && op === "-") {
-      operators.push(op);
+      currentInput = "-"; // Instead of pushing `-`, we store it as part of input
+      updateDisplay();
+      return;
     }
-    // Handle multiplication-minus or division-minus with new operator
-    else if (operators.length >= 2 && 
-            (operators[operators.length - 2] === "*" || operators[operators.length - 2] === "/") && 
-            lastOp === "-" && 
-            op !== "-") {
-      operators.splice(operators.length - 2, 2, op);
-    }
-    // Normal operator replacement
-    else {
+
+    // Replace last operator if user enters another operator
+    if (op !== "-") {
       operators[operators.length - 1] = op;
     }
-    
+
     updateDisplay();
     return;
   }
 
-  // Only proceed if there's a valid operand
   if (currentInput === "") return;
-  
-  // Add new operand and operator
+
   operands.push(parseFloat(currentInput));
   operators.push(op);
   currentInput = "";
   allowOperators = false;
   updateDisplay();
 }
+
 
 function clearDisplay() {
   currentInput = "";
