@@ -24,7 +24,7 @@ function inputCal(op) {
   if (currentInput === "" && operators.length > 0) {
     let lastOp = operators[operators.length - 1];
     
-    // Handle multiplication/division with minus
+    // Handle multiplication/division with minus--
     if ((lastOp === "*" || lastOp === "/") && op === "-") {
       operators.push(op);
     }
